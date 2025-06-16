@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="enny.css"/>
+    <title>ENNY.BRANDS</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-expand-lg" style="background: #aee3fd">
+          <div
+            class="container-fluid d-flex justify-content-between align-items-center"
+          >
+            <!-- Brand and Small-Screen Cart -->
+            <div class="d-flex align-items-center gap-3 ">
+              <a class="navbar-brand fw-bold ms-3" href="#">ENNY.BRANDS</a>
+                  <div class="icon-cart d-lg-none ms-2">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                />
+              </svg>
+              <span>0</span>
+            </div>
+            </div>
+
+            <!-- Toggle Button for Mobile -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Nav Links Centered -->
+            <div
+              class="collapse navbar-collapse justify-content-center"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-5 gap-md-1">
+                <li class="nav-item">
+                  <a class="nav-link active" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="store.html"
+                    >Store</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Large-Screen Cart Icon Aligned Right -->
+            <div class="icon-cart d-none d-lg-block">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+                />
+              </svg>
+              <span>0</span>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+      <section>
+        <div class="main d-flex flex-column flex-md-row ms-1 gap-0 mt-md-0">
+          <div class="col-12 col-md-6 mb-4">
+            <p>
+              <i
+                >We bring to you the home of fashionable/luxurious material,
+                Shoes and other outfit to style your wardrobe</i
+              ><br />
+              <button class="btn btn-dark d-none d-lg-block">
+                <a href="store.html">Shop Now</a>
+              </button>
+            </p>
+          </div>
+
+
+
+        <!-- Clothes -->
+        <aside>
+         <!-- Show on large screens only (unchanged layout) -->
+         <div class="image-container position-relative me-md-3 mb-3 d-none d-lg-block">
+           <main>
+             <img src="image/05.jpg" alt="Main Image" class="main-img" />
+             <a
+             href="store.html"
+             class="position-absolute top-50 start-50 translate-middle text-primary fw-bold text-decoration-none d-none"
+             style="font-size: 20px; z-index: 2 d-lg-none"
+             >Clothes</a
+             >
+           </main>
+         </div>
+        
+         <!-- Show only on small screens: image beside link -->
+          <div class="d-flex align-items-center gap-3 mb-3 d-lg-none">
+           <img src="image/05.jpg" alt="Main Image" style="width: 100px; height: auto" />
+           <a href="store.html" class="text-primary fw-bold text-decoration-none">Clothes</a>
+          </div>
+        </aside>
+
+
+        <aside>
+           <!-- Show on large screens only (unchanged layout) -->
+          <main class="position-relative d-none d-lg-block">
+             <img src="image/42.jpg" alt="" />
+             <a
+             href="store.html"
+             class="position-absolute top-50 start-50 translate-middle text-primary fw-bold text-decoration-none d-none"
+             style="font-size: 20px; z-index: 2"
+             >Bags</a
+             >
+          </main>
+
+          <!-- Show only on small screens: image beside link -->
+          <div class="d-flex align-items-center gap-3 mb-3 d-lg-none">
+            <img src="image/42.jpg" alt="" style="width: 100px; height: auto" />
+            <a href="store.html" class="text-primary fw-bold text-decoration-none">Bags</a>
+          </div>
+
+          <!-- Bags -->
+          <main class="position-relative d-none d-lg-block">
+            <img src="image/38.jpg" alt="" />
+            <a
+            href="store.html"
+            class="position-absolute top-50 start-50 translate-middle text-primary fw-bold text-decoration-none  d-none"
+            style="font-size: 20px; z-index: 2"
+            >Shoes</a
+            >
+          </main>
+
+          <!-- Show on large screens only (unchanged layout) -->
+          <div class="d-flex align-items-center gap-3 mb-3 d-lg-none">
+           <img src="image/38.jpg" alt="" style="width: 100px; height: auto" />
+           <a href="store.html" class="text-primary fw-bold text-decoration-none">Shoes</a>
+          </div>
+        </aside>
+      </section>
+    </div>
+
+    <section>
+      <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+          <div class="item">
+            <div class="image">
+              <img src="image/05.jpg" alt="" />
+            </div>
+            <div class="name">NAME</div>
+            <div class="totalPrice">N60,000</div>
+            <div class="quantity">
+              <span class="minus"><</span>
+              <span>1</span>
+              <span class="plus">></span>
+            </div>
+          </div>
+        </div>
+        <div class="btn">
+          <button class="close">CLOSE</button>
+          <button class="checkOut">CHECK OUT</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="home.js"></script>
+    <script src="store.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
