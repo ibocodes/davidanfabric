@@ -244,6 +244,43 @@ body.showCart .cartTab {
    border-top-right-radius: 5px;
    border-bottom-right-radius: 5px;
   }
+  /* Stack the main section vertically on tablets, like on phones */
+  .main {
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+  aside > .d-lg-none {
+    display: flex !important;
+  }
+  aside > .d-lg-block {
+    display: none !important;
+  }
+  .main p{
+    margin-top: 10px;
+    font-size: 39px;
+  }
+  .main > .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .main > .col-12 p {
+    width: 100%;
+    text-align: center;
+  }
+  .main img, .image-container img {
+    width: 100% !important;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    font-weight: bold;
+   
+  }
+  aside a.text-primary {
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+  }
 }
 
 @media (max-width: 768px) {
