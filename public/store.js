@@ -23,14 +23,8 @@ if (closeCart) {
   });
 }
 
-// iconCart.addEventListener("click", () => {
-//   body.classList.toggle("showCart");
-// });
-// closeCart.addEventListener("click", () => {
-//   body.classList.toggle("showCart");
-// });
-
 const addDataToHTML = () => {
+  if (!listProductHTML) return;
   listProductHTML.innerHTML = "";
   if (listProducts.length > 0) {
     listProducts.forEach((product) => {
@@ -51,13 +45,15 @@ const addDataToHTML = () => {
 };
 
 // Event listener for adding products to the cart
-listProductHTML.addEventListener("click", (event) => {
-  let positionClick = event.target;
-  if (positionClick.classList.contains("addCart")) {
-    let product_id = positionClick.parentElement.dataset.id;
-    addToCart(product_id);
-  }
-});
+if (listProductHTML) {
+  listProductHTML.addEventListener("click", (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains("addCart")) {
+      let product_id = positionClick.parentElement.dataset.id;
+      addToCart(product_id);
+    }
+  });
+}
 
 // Function to add a product to the cart
 const addToCart = (product_id) => {
@@ -92,6 +88,7 @@ const addCartToMemory = () => {
 
 // Function to retrieve the cart from local storage
 const addCartToHTML = () => {
+  if (!listCartHTML) return;
   listCartHTML.innerHTML = ""; // Clear previous content
   let totalQuantity = 0;
   if (carts.length > 0) {
@@ -104,6 +101,7 @@ const addCartToHTML = () => {
         (value) => value.id == cart.product_id
       );
       let info = listProducts[positionProduct];
+      if (!info) return;
       newCart.innerHTML = `
           <div class="image">
             <img src="${info.image}" alt="">
@@ -124,24 +122,29 @@ const addCartToHTML = () => {
       listCartHTML.appendChild(newCart);
     });
   }
-  iconcartSpan.innerText = totalQuantity;
+  // Update all cart icon counts (mobile and desktop)
+  document.querySelectorAll(".icon-cart span").forEach((span) => {
+    span.innerText = totalQuantity;
+  });
 };
 
 // Event listener for updating the cart when clicking on plus or minus buttons
-listCartHTML.addEventListener("click", (event) => {
-  let positionClick = event.target;
-  if (
-    positionClick.classList.contains("minus") ||
-    positionClick.classList.contains("plus")
-  ) {
-    let product_id = positionClick.closest(".item").dataset.id;
-    let type = "minus";
-    if (positionClick.classList.contains("plus")) {
-      type = "plus";
+if (listCartHTML) {
+  listCartHTML.addEventListener("click", (event) => {
+    let positionClick = event.target;
+    if (
+      positionClick.classList.contains("minus") ||
+      positionClick.classList.contains("plus")
+    ) {
+      let product_id = positionClick.closest(".item").dataset.id;
+      let type = "minus";
+      if (positionClick.classList.contains("plus")) {
+        type = "plus";
+      }
+      changeQuantity(product_id, type);
     }
-    changeQuantity(product_id, type);
-  }
-});
+  });
+}
 
 const changeQuantity = (product_id, type) => {
   let positionItemInCart = carts.findIndex(
