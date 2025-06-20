@@ -7,17 +7,33 @@ let iconcartSpan = document.querySelector(".icon-cart span");
 let listProducts = [];
 let carts = [];
 
-iconCart.addEventListener("click", () => {
-  body.classList.toggle("showCart");
-});
-closeCart.addEventListener("click", () => {
-  body.classList.toggle("showCart");
-});
+// Load cart from localStorage on page load
+if (localStorage.getItem("cart")) {
+  carts = JSON.parse(localStorage.getItem("cart"));
+}
+
+if (iconCart) {
+  iconCart.addEventListener("click", () => {
+    body.classList.toggle("showCart");
+  });
+}
+if (closeCart) {
+  closeCart.addEventListener("click", () => {
+    body.classList.toggle("showCart");
+  });
+}
+
+// iconCart.addEventListener("click", () => {
+//   body.classList.toggle("showCart");
+// });
+// closeCart.addEventListener("click", () => {
+//   body.classList.toggle("showCart");
+// });
 
 const addDataToHTML = () => {
   listProductHTML.innerHTML = "";
   if (listProducts.length > 0) {
-    listProducts.forEach(product => {
+    listProducts.forEach((product) => {
       let newProduct = document.createElement("div");
       newProduct.classList.add("item");
       newProduct.dataset.id = product.id;
@@ -66,24 +82,27 @@ const addToCart = (product_id) => {
   }
   addCartToHTML();
   addCartToMemory();
+  localStorage.setItem("cart", JSON.stringify(carts));
 };
 
 // Function to save the cart to local storage
 const addCartToMemory = () => {
   localStorage.setItem("cart", JSON.stringify(carts));
-}
+};
 
 // Function to retrieve the cart from local storage
 const addCartToHTML = () => {
   listCartHTML.innerHTML = ""; // Clear previous content
   let totalQuantity = 0;
   if (carts.length > 0) {
-    carts.forEach(cart => {
+    carts.forEach((cart) => {
       totalQuantity = totalQuantity + cart.quantity;
       let newCart = document.createElement("div");
       newCart.classList.add("item");
-      newCart.dataset.id = cart.product_id
-      let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+      newCart.dataset.id = cart.product_id;
+      let positionProduct = listProducts.findIndex(
+        (value) => value.id == cart.product_id
+      );
       let info = listProducts[positionProduct];
       newCart.innerHTML = `
           <div class="image">
@@ -111,27 +130,33 @@ const addCartToHTML = () => {
 // Event listener for updating the cart when clicking on plus or minus buttons
 listCartHTML.addEventListener("click", (event) => {
   let positionClick = event.target;
-  if(positionClick.classList.contains("minus") || positionClick.classList.contains("plus")){
+  if (
+    positionClick.classList.contains("minus") ||
+    positionClick.classList.contains("plus")
+  ) {
     let product_id = positionClick.closest(".item").dataset.id;
     let type = "minus";
-    if(positionClick.classList.contains("plus")){
+    if (positionClick.classList.contains("plus")) {
       type = "plus";
     }
     changeQuantity(product_id, type);
   }
-})
+});
 
 const changeQuantity = (product_id, type) => {
-  let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
-  if(positionItemInCart >= 0){
+  let positionItemInCart = carts.findIndex(
+    (value) => value.product_id == product_id
+  );
+  if (positionItemInCart >= 0) {
     switch (type) {
       case "plus":
-        carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
-      break;
+        carts[positionItemInCart].quantity =
+          carts[positionItemInCart].quantity + 1;
+        break;
 
       default:
         let valueChange = carts[positionItemInCart].quantity - 1;
-        if(valueChange > 0){
+        if (valueChange > 0) {
           carts[positionItemInCart].quantity = valueChange;
         } else {
           carts.splice(positionItemInCart, 1);
@@ -140,8 +165,9 @@ const changeQuantity = (product_id, type) => {
     }
   }
   addCartToMemory();
-  addCartToHTML()
-}
+  addCartToHTML();
+  localStorage.setItem("cart", JSON.stringify(carts));
+};
 
 // Function to initialize the application
 const initApp = () => {
@@ -152,7 +178,7 @@ const initApp = () => {
       listProducts = data;
       addDataToHTML();
 
-      if(localStorage.getItem("cart")){
+      if (localStorage.getItem("cart")) {
         carts = JSON.parse(localStorage.getItem("cart"));
         addCartToHTML();
       }

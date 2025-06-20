@@ -1,18 +1,18 @@
-// let cartCount = 0;
-// const cartCountElement = document.getElementById("cart-count");
-// const addToCartButtons = document.querySelectorAll(".add-to-cart");
-
-// const { response } = require("express");
-
-// addToCartButtons.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     cartCount++;
-//     cartCountElement.textContent = cartCount;
+// if (iconCart) {
+//   iconCart.addEventListener("click", () => {
+//     body.classList.toggle("showCart");
 //   });
-// });
-// document.querySelector('.close').addEventListener('click', () => {
-//   document.body.classList.remove('showCart');
-// });
+// }
+// if (closeCart) {
+//   closeCart.addEventListener("click", () => {
+//     body.classList.toggle("showCart");
+//   });
+// }
+document.querySelectorAll(".icon-cart").forEach(icon => {
+  icon.addEventListener("click", () => {
+    document.body.classList.toggle("showCart");
+  });
+});
 
 document.addEventListener("DOMContentLoaded", ()=> {
   const slideshowImg = document.querySelector(".main-img");
