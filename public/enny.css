@@ -277,7 +277,7 @@ body.showCart .cartTab {
    
   }
   aside a.text-primary {
-    font-size: 30px !important;
+    font-size: 23px !important;
     font-weight: 700 !important;
     letter-spacing: 1px;
   }
@@ -301,7 +301,7 @@ body.showCart .cartTab {
 
 
   .main img {
-    max-width: 20rem;
+    max-width: 9rem;
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -321,7 +321,11 @@ body.showCart .cartTab {
    max-width: 100% !important;
    width: 100% !important;
   }
-  
+    aside a.text-primary {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -342,5 +346,10 @@ body.showCart .cartTab {
     width: 100%;
     height: auto;
     border-radius: 5px;
+  }
+    aside a.text-primary {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
   }
 }

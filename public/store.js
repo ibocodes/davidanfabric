@@ -23,6 +23,14 @@ if (closeCart) {
   });
 }
 
+// Add event listener only for the mobile cart icon on the home page
+const mobileCartIcon = document.querySelector("#mobile-cart-icon");
+if (mobileCartIcon) {
+  mobileCartIcon.addEventListener("click", () => {
+    body.classList.toggle("showCart");
+  });
+}
+
 const addDataToHTML = () => {
   if (!listProductHTML) return;
   listProductHTML.innerHTML = "";
@@ -146,6 +154,7 @@ if (listCartHTML) {
   });
 }
 
+// Function to change the quantity of a product in the cart
 const changeQuantity = (product_id, type) => {
   let positionItemInCart = carts.findIndex(
     (value) => value.product_id == product_id
