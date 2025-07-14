@@ -1,13 +1,3 @@
-// if (iconCart) {
-//   iconCart.addEventListener("click", () => {
-//     body.classList.toggle("showCart");
-//   });
-// }
-// if (closeCart) {
-//   closeCart.addEventListener("click", () => {
-//     body.classList.toggle("showCart");
-//   });
-// }
 document.querySelectorAll(".icon-cart").forEach(icon => {
   icon.addEventListener("click", () => {
     document.body.classList.toggle("showCart");

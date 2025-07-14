@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENNY-BRANDS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/flowbite@latest/dist/flowbite.bundle.js"></script>
+  </head>
+  <body>
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <!--
+            Icon when menu is closed.
+
+            Menu open: "hidden", Menu closed: "block"
+          -->
+              <svg
+                class="block size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <!--
+            Icon when menu is open.
+
+            Menu open: "block", Menu closed: "hidden"
+          -->
+              <svg
+                class="hidden size-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex shrink-0 items-center">
+                <nav class="text-white">
+                    DAVIDANFABRIC
+                </nav>
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a
+                  href="#"
+                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page"
+                  >Home</a
+                >
+                  <a
+                  href="#"
+                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  >Store</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <button
+              type="button"
+              class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+            >
+              <span class="absolute -inset-1.5"></span>
+              <span class="sr-only">View notifications</span>
+             <button class="relative p-2 rounded-full hover:bg-gray-200">
+  <svg class="w-[34px] h-[34px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"/>
+  </svg>
+</button>
+
+            </button>
+
+            <!-- Profile dropdown -->
+            <div class="relative ml-3">
+              <div>
+              
+              </div>
+
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <a
+            href="#"
+            class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
+            aria-current="page"
+            >Home</a
+          >
+            <a
+            href="#"
+            class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
+            >Store</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="mt-6 flex flex-col md:flex-row gap-4 items-center rounded">
+
+      <p class="text-center text-xl mt-5 font-medium">"Where your style story begins — curated, premium, and made to impress."</p>
+      <p class="hidden">
+        Welcome to the ultimate destination for fashion-forward individuals —
+        where luxury meets style. Discover a curated selection of premium
+        materials, stylish footwear, and sophisticated outfits designed to
+        elevate your wardrobe and express your unique identity. Whether you're
+        dressing up for a special occasion or refreshing your everyday look,
+        we’ve got everything you need to step out in confidence and class
+      </p>
+      <div class="bg-gray-100 p-4 rounded w-34">
+        <img src="dowload3.jpg" class="filter drop-shadow-[20px_-6px_6px_rgba(0,0,0,0.7)]" alt="" />
+      </div>
+    </div> 
+
+    <div class="mt-6">
+  <main>
+    <h1 class="text-center font-semibold text-4xl mb-3">Collection</h1>
+    <div class="flex justify-center items-center gap-4 mt-2 relative p-12 bg-gray-50 rounded-xl">
+      <!-- Left Image (Behind) -->
+      <img 
+        src="image/44.jpg" 
+        class="w-32 h-52 object-cover rounded-lg opacity-90 transform scale-75 -translate-x-8 z-0 filter grayscale-10"
+      >
+      
+      <!-- Middle Image (Dominant) -->
+      <img 
+        src="image/33.jpg" 
+        class="w-56 h-72 object-cover rounded-xl shadow-2xl z-20 border-4 border-white transform hover:scale-105 transition-all"
+      >
+      
+      <!-- Right Image (Behind) -->
+      <img 
+        src="image/25.jpg" 
+        class="w-32 h-52 object-cover rounded-lg opacity-90 transform scale-75 translate-x-8 z-0 filter sepia-10"
+      >
+    </div>
+  </main>
+</div>
+
+
+  </body>
+</html>
