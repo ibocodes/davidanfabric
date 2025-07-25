@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Image Carousel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .carousel-container {
+        perspective: 1000px;
+      }
+      .carousel-img {
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, opacity;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="p-8">
+      <h1 class="text-center font-semibold text-4xl mb-8">Collection</h1>
+
+      <div
+        class="carousel-container flex justify-center items-center gap-4 p-12 bg-gray-50 rounded-xl mx-auto max-w-4xl relative h-80 overflow-hidden"
+      >
+        <!-- Left Position (Small) -->
+        <img
+          id="left-img"
+          src="image/44.jpg"
+          class="carousel-img absolute w-32 h-52 object-cover rounded-lg opacity-80 z-10 left-[15%]"
+        />
+
+        <!-- Middle Position (Large) -->
+        <img
+          id="middle-img"
+          src="image/33.jpg"
+          class="carousel-img absolute w-56 h-72 object-cover rounded-xl shadow-lg z-20 border-4 border-white left-1/2 -translate-x-1/2"
+        />
+
+        <!-- Right Position (Small) -->
+        <img
+          id="right-img"
+          src="image/25.jpg"
+          class="carousel-img absolute w-32 h-52 object-cover rounded-lg opacity-80 z-10 left-[85%]"
+        />
+      </div>
+    </main>
+
+  <script>
+    // Get the image elements from the DOM
+    let leftImg = document.getElementById('left-img');
+    let middleImg = document.getElementById('middle-img');
+    let rightImg = document.getElementById('right-img');
+
+    // Define the classes for each position based on your HTML
+    // This makes the code clean and easy to update
+    const leftClasses = "carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[1%]";
+    const middleClasses = "carousel-img absolute w-46 h-52 object-cover rounded-xl shadow-lg z-20 border-4 border-white left-1/2 -translate-x-1/2";
+    const rightClasses = "carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]";
+
+    function rotateCarousel() {
+      // --- PHASE 1: Animate the images to their new positions ---
+
+      // The RIGHT image becomes the new middle image
+      rightImg.className = middleClasses;
+
+      // The MIDDLE image becomes the new left image
+      middleImg.className = leftClasses;
+
+      // The LEFT image animates off-screen and fades out
+      leftImg.classList.add('opacity-0');
+      leftImg.classList.add('left-[-30%]'); // Move far off-screen to the left
+
+      // --- PHASE 2: Reset everything for the next rotation ---
+      // This happens after the animation finishes (700ms)
+      setTimeout(() => {
+        // Step 1: Swap the image sources to complete the rotation
+        const tempSrc = leftImg.src;
+        leftImg.src = middleImg.src;
+        middleImg.src = rightImg.src;
+        rightImg.src = tempSrc;
+
+        // Step 2: Rotate the JavaScript variables so they point to the correct elements
+        // The element that was on the left is now considered the right one for the next cycle
+        const temp = leftImg;
+        leftImg = middleImg;
+        middleImg = rightImg;
+        rightImg = temp;
+
+        // Step 3: Instantly reset the classes on the newly referenced elements
+        // This makes the old left image (now the rightImg) reappear in the correct spot
+        rightImg.className = rightClasses;
+        middleImg.className = middleClasses;
+        leftImg.className = leftClasses;
+      }, 700);
+    }
+
+    // Call the rotation function every 3 seconds
+    setInterval(rotateCarousel, 9000);
+</script>
+  </body>
+</html>

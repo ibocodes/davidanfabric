@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Font Awesome CDN (Latest Version) -->
+    <title>Document</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -11,16 +11,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>ENNY-BRANDS</title>
-    <style>
-      .carousel-container {
-        perspective: 1000px;
-      }
-      .carousel-img {
-        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: transform, opacity;
-      }
-    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
@@ -99,13 +89,23 @@
                 <a
                   href="#"
                   class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                  aria-current="page"
                   >Home</a
                 >
                 <a
                   href="#"
                   class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                   >Store</a
+                >
+                <a
+                  href="#"
+                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page"
+                  >Clothes</a
+                >
+                <a
+                  href="bag.html"
+                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  >Bags</a
                 >
               </div>
             </div>
@@ -147,9 +147,8 @@
         <div class="sm:hidden hidden bg-gray-800" id="mobile-menu">
           <div class="space-y-1 px-2 pb-3 pt-2">
             <a
-              href="#"
+              href="index.html"
               class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
-              aria-current="page"
               >Home</a
             >
             <a
@@ -160,6 +159,7 @@
             <a
               href="cloth.html"
               class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
+              aria-current="page"
               >Clothes</a
             >
             <a
@@ -171,124 +171,7 @@
         </div>
       </div>
     </nav>
-    <div class="mt-6 flex flex-col md:flex-row gap-4 items-center rounded">
-      <p class="text-center text-xl mt-5 font-medium">
-        "Where your style story begins — curated, premium, and made to impress."
-      </p>
-      <p class="hidden">
-        Welcome to the ultimate destination for fashion-forward individuals —
-        where luxury meets style. Discover a curated selection of premium
-        materials, stylish footwear, and sophisticated outfits designed to
-        elevate your wardrobe and express your unique identity. Whether you're
-        dressing up for a special occasion or refreshing your everyday look,
-        we’ve got everything you need to step out in confidence and class
-      </p>
 
-      <div class="bg-gray-100 p-4 rounded w-34">
-        <img src="dowload3.jpg" class="" alt="" />
-      </div>
-    </div>
-
-    <div class="mt-6">
-      <main class="">
-        <h1 class="text-center font-semibold text-4xl mb-3">Collection</h1>
-        <div
-          class="carousel-container flex justify-center items-center gap-4 p-12 bg-gray-50 rounded-xl mx-auto max-w-4xl relative h-80 overflow-hidden"
-        >
-          <!-- Left Image (Behind) -->
-          <img
-            id="left-img4"
-            src="image/41.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[1%]"
-          />
-          <img
-            id="left-img3"
-            src="image/46.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[1%]"
-          />
-          <img
-            id="left-img2"
-            src="image/12.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[1%]"
-          />
-          <img
-            id="left-img1"
-            src="image/44.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[1%]"
-          />
-
-          <!-- Middle Image (Dominant) -->
-          <img
-            id="middle-img"
-            src="image/33.jpg"
-            class="carousel-img absolute w-46 h-52 object-cover rounded-xl shadow-lg z-20 border-4 border-white"
-          />
-
-          <!-- Right Image (Behind) -->
-          <img
-            id="right-img1"
-            src="image/25.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]"
-          />
-          <img
-            id="right-img2"
-            src="image/31.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]"
-          />
-          <img
-            id="right-img3"
-            src="image/20.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]"
-          />
-          <img
-            id="right-img4"
-            src="image/26.jpg"
-            class="carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]"
-          />
-        </div>
-      </main>
-    </div>
-
-    <div class="mt-4 p-6">
-      <footer>
-        <button
-          class="mx-auto block p-3 text-white bg-gray-800 border shadow rounded-full hover:text-blue-600"
-        >
-          <a href="">Shop Now </a>
-        </button>
-        <div class="bg-gray-900 flex=row w-full">
-          <a href="#" class="text-blue-500 hover:opacity-80">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M8.29 20c7.547 0 11.675-6.155 11.675-11.49 0-.175 0-.349-.012-.522A8.18 8.18 0 0022 5.92a8.19 8.19 0 01-2.357.636A4.077 4.077 0 0021.448 4.1a8.14 8.14 0 01-2.605.975 4.1 4.1 0 00-6.993 3.734A11.65 11.65 0 013 4.89a4.05 4.05 0 001.27 5.456A4.07 4.07 0 012.8 9.71v.05a4.1 4.1 0 003.292 4.017 4.09 4.09 0 01-1.852.07 4.1 4.1 0 003.834 2.823A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
-              />
-            </svg>
-          </a>
-
-          <a href="#" class="text-blue-700 hover:opacity-80">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M22 12.07C22 6.477 17.523 2 12 2S2 6.477 2 12.07c0 5.012 3.657 9.165 8.438 9.878v-6.99H7.898v-2.888h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.774-1.63 1.562v1.875h2.773l-.443 2.889h-2.33v6.99C18.343 21.235 22 17.081 22 12.07z"
-              />
-            </svg>
-          </a>
-
-          <a href="#" class="text-pink-500 hover:opacity-80">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0120.5 7.75v8.5a4.25 4.25 0 01-4.25 4.25h-8.5a4.25 4.25 0 01-4.25-4.25v-8.5A4.25 4.25 0 017.75 3.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm5.25-.75a.75.75 0 100 1.5.75.75 0 000-1.5z"
-              />
-            </svg>
-          </a>
-
-          <a href="">
-            <i
-              class="fa-brands fa-whatsapp text-green-500 hover:opacity-80"
-            ></i>
-          </a>
-        </div>
-      </footer>
-    </div>
     <script src="script.js"></script>
   </body>
 </html>
