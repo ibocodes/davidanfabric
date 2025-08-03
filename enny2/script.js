@@ -3,6 +3,7 @@ const openMenu = document.getElementById("openMenu");
 const buttonMenu = document.getElementById("buttonMenu");
 const mobileMenu = document.getElementById("mobile-menu");
 
+
 const images = [
   document.getElementById("left-img1"),
   document.getElementById("left-img3"),
@@ -66,19 +67,6 @@ images[0].src = lastSrc;
 
 // Start the carousel
 setInterval(rotateCarousel, 3000);
-
-//Stop setInterval
-
-// let clearSetInterval = setInterval(rotateCarousel, 3000);
-// images.forEach(img => {
-//   img.addEventListener('mouseenter', () => {
-//     clearInterval(clearSetInterval)
-//   });
-//   img.addEventListener('mouseleave', () => {
-//     clearInterval(clearSetInterval);
-//     clearSetInterval = setInterval(rotateCarousel, 3000);
-//   });
-// });
 
 // Start the carousel
 let carouselInterval = setInterval(rotateCarousel, 3000);
