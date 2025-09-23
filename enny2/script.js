@@ -18,7 +18,8 @@ const images = [
 // Define the classes for each position
 const leftClasses = "carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[1%]";
 const middleClasses = "carousel-img absolute w-46 h-52 object-cover rounded-xl shadow-lg z-20 border-4 border-white";
-const rightClasses = "carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]";
+const rightClasses = "carousel-img absolute w-32 h-40 object-cover rounded-lg opacity-80 z-10 left-[69%]"; 
+
 
 let isAnimating = false;
 

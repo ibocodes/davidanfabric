@@ -111,15 +111,11 @@
           <div
             class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
           >
-            <button
-              type="button"
-              class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">View notifications</span>
-            </button>
+            <!-- carticon svg -->
+
             <button class="relative p-2 rounded-full hover:bg-gray-200">
               <svg
+                id="cart"
                 class="w-[34px] h-[34px] text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,6 +132,12 @@
                   d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
                 />
               </svg>
+              <!-- Place this inside the navbar cart icon container -->
+              <span
+                id="cart-count"
+                class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 hidden"
+                >0</span
+              >
             </button>
 
             <!-- Mobile menu, show/hide based on menu state. -->
@@ -169,10 +171,13 @@
       </div>
     </nav>
     <div class="mt-6 flex flex-col md:flex-row gap-4 items-center rounded">
-      <p class="text-center text-xl mt-5 font-medium">
-        <i>Where your style story begins — curated, premium, and made to impress.</i>
+      <p class="text-center text-xl mt-5 font-medium md:hidden">
+        <i
+          >Where your style story begins — curated, premium, and made to
+          impress.</i
+        >
       </p>
-      <p class="hidden">
+      <p class="hidden md:inline">
         Welcome to the ultimate destination for fashion-forward individuals —
         where luxury meets style. Discover a curated selection of premium
         materials, stylish footwear, and sophisticated outfits designed to
@@ -254,7 +259,9 @@
           <a href="store.html">Shop Now </a>
         </button>
 
-        <div class="bg-white shadow flex justify-evenly items-center w-full text-2xl mt-6 py-4">
+        <div
+          class="bg-white shadow flex justify-evenly items-center w-full text-2xl mt-6 py-4"
+        >
           <a href="#" class="text-blue-500 hover:opacity-80">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
