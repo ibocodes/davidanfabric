@@ -22,6 +22,23 @@
       }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              scrolling: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+            animation: {
+              scrolling: "scrolling 20s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
     <link
       href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
       rel="stylesheet"
@@ -90,19 +107,29 @@
               <nav class="text-white">DAVIDANFABRIC</nav>
             </div>
 
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
+            <div class="hidden sm:absolute sm:inset-x-0 sm:flex sm:justify-center">
+              <div class="flex space-x-4 justify-center">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a
                   href="#"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   aria-current="page"
                   >Home</a
                 >
                 <a
                   href="#"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Store</a
+                >
+                 <a
+                  href="#"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
+                  >Clothes</a
+                >
+                 <a
+                  href="#"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
+                  >Bags</a
                 >
               </div>
             </div>
@@ -194,6 +221,38 @@
     <div class="mt-6">
       <main class="">
         <h1 class="text-center font-semibold text-4xl mb-3">Collection</h1>
+
+          <div class="flex-[3] flex overflow-hidden relative h-[520px]">
+        <div
+          id="marquee-content"
+          class="flex gap-2 animate-scrolling absolute left-0 top-0 w-max"
+        >
+          <img
+            src="SparkIMG/Frame 10.png"
+            alt=""
+            class="h-[420px] w-[250px] object-cove rounded-lg"
+          />
+          <div class="flex flex-col gap-1">
+            <img
+              src="SparkIMG/Rectangle 4.png"
+              alt=""
+              class="h-[100px] w-[270px]"
+            />
+            <img
+              src="SparkIMG/Rectangle 2.png"
+              alt=""
+              class="h-[317px] w-[270px]"
+            />
+          </div>
+          <img
+            src="SparkIMG/Rectangle 3.png"
+            alt=""
+            class="h-[420px] w-[250px] object-cover rounded-lg"
+          />
+          <!-- Add more unique images as needed -->
+        </div>
+      </div>
+
         <div
           class="carousel-container flex justify-center items-center gap-4 p-12 bg-gray-50 rounded-xl mx-auto max-w-4xl relative h-80 overflow-hidden"
         >
