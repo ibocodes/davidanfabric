@@ -22,14 +22,14 @@
       }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
-     <script>
+    <script>
       tailwind.config = {
         theme: {
           extend: {
             keyframes: {
               scrolling: {
                 "0%": { transform: "translateX(0)" },
-                "100%": { transform: "translateX(-50%)" },
+                "100%": { transform: "translateX(-100%)" },
               },
             },
             animation: {
@@ -107,7 +107,9 @@
               <nav class="text-white">DAVIDANFABRIC</nav>
             </div>
 
-            <div class="hidden sm:absolute sm:inset-x-0 sm:flex sm:justify-center">
+            <div
+              class="hidden sm:absolute sm:inset-x-0 sm:flex sm:justify-center"
+            >
               <div class="flex space-x-4 justify-center">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a
@@ -121,12 +123,12 @@
                   class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Store</a
                 >
-                 <a
+                <a
                   href="#"
                   class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Clothes</a
                 >
-                 <a
+                <a
                   href="#"
                   class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Bags</a
@@ -197,24 +199,33 @@
         </div>
       </div>
     </nav>
-    <div class="mt-6 flex flex-col md:flex-row gap-4 items-center rounded">
-      <p class="text-center text-xl mt-5 font-medium md:hidden">
+    <div class="block">
+      <p class="text-center text-xl mt-5 font-medium">
         <i
           >Where your style story begins — curated, premium, and made to
           impress.</i
         >
       </p>
-      <p class="hidden md:inline">
-        Welcome to the ultimate destination for fashion-forward individuals —
-        where luxury meets style. Discover a curated selection of premium
-        materials, stylish footwear, and sophisticated outfits designed to
-        elevate your wardrobe and express your unique identity. Whether you're
-        dressing up for a special occasion or refreshing your everyday look,
-        we’ve got everything you need to step out in confidence and class
-      </p>
-
-      <div class="bg-gray-100 p-4 rounded w-34">
-        <img src="dowload3.jpg" class="" alt="" />
+    </div>
+    <div class="flex justify-center mt-6">
+      <div
+        class="mt-6 flex flex-col md:flex-row gap-4 items-center rounded mx-auto "
+      >
+        <img
+          src="image/delight-dzansi-NaYCYOHQki8-unsplash.jpg"
+          alt=""
+          class="w-[300px] h-[420px] object-cover"
+        />
+        <img
+          src="image/emmanuel-akinte-RraU6OM-hiE-unsplash.jpg"
+          alt=""
+          class="w-[300px] h-[420px] object-cover"
+        />
+        <img
+          src="image/kalpa-mahagamage--eXbTwI0VU0-unsplash (1).jpg"
+          alt=""
+          class="w-[300px]  h-[420px] object-cover"
+        />
       </div>
     </div>
 
@@ -222,39 +233,63 @@
       <main class="">
         <h1 class="text-center font-semibold text-4xl mb-3">Collection</h1>
 
-          <div class="flex-[3] flex overflow-hidden relative h-[520px]">
         <div
-          id="marquee-content"
-          class="flex gap-2 animate-scrolling absolute left-0 top-0 w-max"
+          class="hidden md:block flex-[3] flex overflow-hidden relative h-[520px] mt-12"
         >
-          <img
-            src="SparkIMG/Frame 10.png"
-            alt=""
-            class="h-[420px] w-[250px] object-cove rounded-lg"
-          />
-          <div class="flex flex-col gap-1">
+          <div
+            id="marquee-content"
+            class="flex gap-5 animate-scrolling absolute left-0 top-0 w-max"
+          >
             <img
-              src="SparkIMG/Rectangle 4.png"
+              src="image/31.jpg"
               alt=""
-              class="h-[100px] w-[270px]"
+              class="h-[420px] w-[250px] object-cove rounded-lg"
+            />
+            <div class="flex flex-col gap-1">
+              <img src="image/41.jpg" alt="" class="h-[317px] w-[270px]" />
+            </div>
+            <img
+              src="image/02.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
             />
             <img
-              src="SparkIMG/Rectangle 2.png"
+              src="image/21.jpg"
               alt=""
-              class="h-[317px] w-[270px]"
+              class="h-[420px] w-[250px] object-cover rounded-lg"
+            />
+            <img
+              src="image/40.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
+            />
+            <img
+              src="image/33.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
+            />
+            <img
+              src="image/44.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
+            /><img
+              src="image/41.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
+            /><img
+              src="image/36.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
+            /><img
+              src="image/45.jpg"
+              alt=""
+              class="h-[420px] w-[250px] object-cover rounded-lg"
             />
           </div>
-          <img
-            src="SparkIMG/Rectangle 3.png"
-            alt=""
-            class="h-[420px] w-[250px] object-cover rounded-lg"
-          />
-          <!-- Add more unique images as needed -->
         </div>
-      </div>
 
         <div
-          class="carousel-container flex justify-center items-center gap-4 p-12 bg-gray-50 rounded-xl mx-auto max-w-4xl relative h-80 overflow-hidden"
+          class="carousel-container flex justify-center items-center gap-4 p-12 bg-gray-50 rounded-xl mx-auto max-w-4xl relative h-80 overflow-hidden md:hidden"
         >
           <!-- Left Image (Behind) -->
           <img
@@ -310,13 +345,175 @@
       </main>
     </div>
 
-    <div class="mt-4 p-6">
+    <div class="mt-4 p-6 md:none">
       <footer>
         <button
-          class="mx-auto block p-2 text-white bg-gray-800 border shadow rounded-full hover:text-blue-600"
+          class="mx-auto block p-2 text-white bg-gray-800 border shadow rounded-full hover:text-blue-600 md:w-28"
         >
           <a href="store.html">Shop Now </a>
         </button>
+
+        <div
+          class="card shadow relative flex flex-col items-center mt-1 rounded"
+        >
+          <div
+            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+          >
+            <img src="image/17.jpg" alt="" class="top-1/2 left-1/2" />
+          </div>
+          <div class="flex justify-between items-center w-full ml-3">
+            <button class="text-xl">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button
+              class="flex justify-center items-center gap-4 ml-8 p-1 w-full"
+            >
+              <a href="">
+                <i
+                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
+                ></i>
+              </a>
+              <svg
+                id="cart"
+                class="w-[30px] h-[28px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0.6"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="mt-4 p-6 md:none">
+          class="card shadow relative flex flex-col items-center mt-1 rounded" >
+          <div
+            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+          >
+            <img src="image/17.jpg" alt="" class="top-1/2 left-1/2" />
+          </div>
+          <div class="flex justify-between items-center w-full ml-3">
+            <button class="text-xl">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button
+              class="flex justify-center items-center gap-4 ml-8 p-1 w-full"
+            >
+              <a href="">
+                <i
+                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
+                ></i>
+              </a>
+              <svg
+                id="cart"
+                class="w-[30px] h-[28px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0.6"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="mt-4 p-6 md:none">
+          class="card shadow relative flex flex-col items-center mt-1 rounded" >
+          <div
+            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+          >
+            <img src="image/17.jpg" alt="" class="top-1/2 left-1/2" />
+          </div>
+          <div class="flex justify-between items-center w-full ml-3">
+            <button class="text-xl">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button
+              class="flex justify-center items-center gap-4 ml-8 p-1 w-full"
+            >
+              <a href="">
+                <i
+                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
+                ></i>
+              </a>
+              <svg
+                id="cart"
+                class="w-[30px] h-[28px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0.6"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="mt-4 p-6 md:none">
+          class="card shadow relative flex flex-col items-center mt-1 rounded" >
+          <div
+            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+          >
+            <img src="image/17.jpg" alt="" class="top-1/2 left-1/2" />
+          </div>
+          <div class="flex justify-between items-center w-full ml-3">
+            <button class="text-xl">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <button
+              class="flex justify-center items-center gap-4 ml-8 p-1 w-full"
+            >
+              <a href="">
+                <i
+                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
+                ></i>
+              </a>
+              <svg
+                id="cart"
+                class="w-[30px] h-[28px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="0.6"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
 
         <div
           class="bg-white shadow flex justify-evenly items-center w-full text-2xl mt-6 py-4"
