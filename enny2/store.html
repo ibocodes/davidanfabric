@@ -24,7 +24,7 @@
     <script src="https://unpkg.com/flowbite@latest/dist/flowbite.bundle.js"></script>
   </head>
 
-  <body>
+  <body class="bg-gray-200">
     <nav class="bg-gray-800">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -38,9 +38,6 @@
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-
               <!--Icon when menu is closed.Menu open: "hidden", Menu closed: "block"-->
               <svg
                 id="openMenu"
@@ -89,28 +86,30 @@
               <nav class="text-white">DAVIDANFABRIC</nav>
             </div>
 
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
+            <div
+              class="hidden sm:absolute sm:inset-x-0 sm:flex sm:justify-center"
+            >
+              <div class="flex space-x-4 justify-center">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a
                   href="index.html"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
+                  aria-current="page"
                   >Home</a
                 >
                 <a
                   href="store.html"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
-                  aria-current="page"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Store</a
                 >
                 <a
                   href="cloth.html"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Clothes</a
                 >
                 <a
                   href="bag.html"
-                  class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
                   >Bags</a
                 >
               </div>
@@ -120,10 +119,8 @@
           <div
             class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
           >
-            <button
-              type="button"
-              class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            ></button>
+            <!-- carticon svg -->
+
             <button class="relative p-2 rounded-full hover:bg-gray-200">
               <svg
                 id="cart"
@@ -143,6 +140,12 @@
                   d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
                 />
               </svg>
+              <!-- Place this inside the navbar cart icon container -->
+              <span
+                id="cart-count"
+                class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 hidden"
+                >0</span
+              >
             </button>
 
             <!-- Mobile menu, show/hide based on menu state. -->
@@ -153,17 +156,16 @@
             <a
               href="index.html"
               class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
+              aria-current="page"
               >Home</a
             >
             <a
               href="store.html"
               class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
-              aria-current="page"
               >Store</a
             >
             <a
               href="cloth.html"
-              c
               class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
               >Clothes</a
             >
@@ -178,13 +180,13 @@
     </nav>
 
     <!-- From Uiverse.io by MuhammadHasann -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-2">
       <div class="">
         <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded"
+          class="card shadow w-[300px] relative flex flex-col items-center mt-1 rounded"
         >
           <div
-            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
           >
             <img src="image/15.jpg" alt="" class="top-1/2 left-1/2" />
           </div>
@@ -228,7 +230,7 @@
           class="card shadow relative flex flex-col items-center mt-1 rounded"
         >
           <div
-            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
           >
             <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
           </div>
@@ -272,7 +274,7 @@
           class="card shadow relative flex flex-col items-center mt-1 rounded"
         >
           <div
-            class="image_container overflow-hidden relative z-5 w-full max-w-[170px] rounded h-43"
+            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
           >
             <img src="image/30.jpg" alt="" class="top-1/2 left-1/2" />
           </div>
