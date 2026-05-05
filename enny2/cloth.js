@@ -54,7 +54,7 @@ function renderClothProducts() {
       `
       <article class="product-card" role="listitem" data-product-index="${index}">
         <div class="product-card__img-wrap">
-          <img src="${product.image}" alt="${product.alt}" loading="lazy" />
+          <img src="${product.image}" alt="${product.alt}" width="300" height="400" loading="lazy" decoding="async" />
         </div>
         <div class="product-card__actions">
           <button class="btn-wishlist" type="button" aria-label="Add ${product.name} to wishlist">

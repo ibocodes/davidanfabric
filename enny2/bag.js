@@ -54,7 +54,7 @@ function renderBagProducts() {
       `
       <article class="product-card" role="listitem" data-bag-index="${index}">
         <div class="product-card__img-wrap">
-          <img src="${escAttr(product.image)}" alt="${altSafe}" loading="lazy" />
+          <img src="${escAttr(product.image)}" alt="${altSafe}" width="300" height="400" loading="lazy" decoding="async" />
         </div>
         <div class="product-card__actions">
           <button class="btn-wishlist" type="button" aria-label="Add ${escAttr(product.name)} to wishlist">

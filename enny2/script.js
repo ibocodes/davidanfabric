@@ -212,8 +212,9 @@ window.Cart = (function initCart() {
             src="${escAttr(src)}"
             alt="Enny Brands fabric product ${i + 1} — African print textile"
             width="300"
-            height="340"
+            height="400"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <div class="product-card__actions">
