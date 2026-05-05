@@ -1,515 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Shop premium African-print clothes, Ankara shirts, and modern outfits at Enny Brands (Davidan Fabric)."
+    />
+    <meta
+      name="keywords"
+      content="African print clothes, Ankara shirts, Nigerian fashion outfits, Enny Brands clothes, Davidan Fabric"
+    />
+    <meta name="author" content="Enny Brands" />
+    <title>Clothes Collection — Ankara Shirts &amp; Outfits | Enny Brands</title>
+
+    <!-- Preconnect to CDN origins -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Font Awesome — async (non-render-blocking) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      media="print"
+      onload="this.media='all'"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/flowbite@latest/dist/flowbite.bundle.js"></script>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous"
+      />
+    </noscript>
+
+    <!-- NO Bootstrap. NO Tailwind CDN. NO Flowbite. Single CSS system. -->
+    <style>
+      /* ============================================================
+         DESIGN TOKENS — identical to store.html / index.html
+      ============================================================ */
+      :root {
+        --color-bg: #ffffff;
+        --color-surface: #f9f9f7;
+        --color-nav: #1a1a1a;
+        --color-nav-text: #ffffff;
+        --color-text-primary: #1a1a1a;
+        --color-text-muted: #6b6b6b;
+        --color-accent: #b5873a;
+        --color-accent-hover: #9a7030;
+        --color-border: #e5e5e0;
+        --color-badge: #c0392b;
+        --color-wishlist-active: #c0392b;
+        --color-social-whatsapp: #25d366;
+        --font-display: 'Georgia', 'Times New Roman', serif;
+        --font-body: system-ui, -apple-system, sans-serif;
+        --radius-sm: 6px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 8px 28px rgba(0, 0, 0, 0.14);
+        --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* ============================================================
+         RESET & BASE
+      ============================================================ */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: var(--font-body);
+        background: var(--color-surface);
+        color: var(--color-text-primary);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { display: block; max-width: 100%; }
+      a { text-decoration: none; color: inherit; }
+      button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+      /* ============================================================
+         NAVBAR — identical to store.html
+      ============================================================ */
+      .navbar {
+        background: var(--color-nav);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+      }
+      .navbar__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+      }
+      .navbar__brand {
+        color: var(--color-nav-text);
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        text-transform: uppercase;
+        flex-shrink: 0;
+      }
+      .navbar__links {
+        display: flex;
+        gap: 0.25rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .navbar__links a {
+        color: var(--color-nav-text);
+        padding: 0.4rem 0.85rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: background var(--transition);
+        white-space: nowrap;
+      }
+      .navbar__links a:hover { background: rgba(255, 255, 255, 0.12); }
+      .navbar__links a[aria-current="page"] {
+        background: rgba(255, 255, 255, 0.18);
+        font-weight: 700;
+      }
+      .navbar__actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+      }
+      .cart-btn {
+        position: relative;
+        padding: 0.5rem;
+        border-radius: 50%;
+        color: var(--color-nav-text);
+        transition: background var(--transition);
+      }
+      .cart-btn:hover { background: rgba(255, 255, 255, 0.12); }
+      .cart-btn svg { width: 28px; height: 28px; stroke: currentColor; fill: none; }
+      #cart-count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--color-badge);
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 0.1rem 0.35rem;
+        display: none;
+        min-width: 18px;
+        text-align: center;
+        line-height: 1.4;
+      }
+      .menu-toggle {
+        display: none;
+        padding: 0.4rem;
+        border-radius: var(--radius-sm);
+        color: var(--color-nav-text);
+        transition: background var(--transition);
+      }
+      .menu-toggle:hover { background: rgba(255, 255, 255, 0.12); }
+      .menu-toggle svg { width: 24px; height: 24px; display: block; }
+      .menu-toggle .icon-close { display: none; }
+
+      .mobile-menu {
+        display: none;
+        background: var(--color-nav);
+        padding: 0.5rem 1rem 1rem;
+      }
+      .mobile-menu a {
+        display: block;
+        color: var(--color-nav-text);
+        padding: 0.6rem 0.75rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: background var(--transition);
+      }
+      .mobile-menu a:hover { background: rgba(255, 255, 255, 0.1); }
+      .mobile-menu a[aria-current="page"] { background: rgba(255, 255, 255, 0.15); }
+      .mobile-menu.is-open { display: block; }
+
+      @media (max-width: 639px) {
+        .navbar__links { display: none; }
+        .menu-toggle { display: block; }
+      }
+      @media (min-width: 640px) {
+        .mobile-menu { display: none !important; }
+      }
+
+      /* ============================================================
+         STORE HERO BANNER — identical structure to store.html
+      ============================================================ */
+      .store-hero {
+        width: 100%;
+        max-height: 340px;
+        overflow: hidden;
+        position: relative;
+      }
+      .store-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+      .store-hero__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.45));
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+      }
+      .store-hero__title {
+        color: #fff;
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 5vw, 2.8rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: 0.02em;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      }
+
+      /* ============================================================
+         STORE LAYOUT WRAPPER — identical to store.html
+      ============================================================ */
+      .store-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem 1rem 4rem;
+      }
+
+      /* ============================================================
+         STORE HEADER ROW — identical to store.html
+      ============================================================ */
+      .store-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .store-header__title {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+      }
+      .store-header__count {
+        font-size: 0.875rem;
+        color: var(--color-text-muted);
+      }
+
+      /* ============================================================
+         PRODUCT GRID
+      ============================================================ */
+      #cloth-product-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      @media (min-width: 600px) {
+        #cloth-product-container { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      }
+      @media (min-width: 768px) {
+        #cloth-product-container { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+      }
+      @media (min-width: 1024px) {
+        #cloth-product-container { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+      }
+      @media (min-width: 1280px) {
+        #cloth-product-container { grid-template-columns: repeat(5, 1fr); gap: 1.75rem; }
+      }
+
+      /* ============================================================
+         PRODUCT CARD — identical to store.html
+      ============================================================ */
+      .product-card {
+        background: var(--color-bg);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        transition: box-shadow var(--transition), transform var(--transition);
+        display: flex;
+        flex-direction: column;
+      }
+      .product-card:hover {
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-3px);
+      }
+      .product-card__img-wrap {
+        overflow: hidden;
+        aspect-ratio: 3 / 4;
+        background: var(--color-surface);
+      }
+      .product-card__img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s ease;
+      }
+      .product-card:hover .product-card__img-wrap img {
+        transform: scale(1.06);
+      }
+      .product-card__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 0.65rem;
+        border-top: 1px solid var(--color-border);
+        gap: 0.25rem;
+      }
+      .btn-wishlist {
+        font-size: 1.15rem;
+        color: var(--color-text-muted);
+        padding: 0.25rem 0.4rem;
+        border-radius: var(--radius-sm);
+        transition: color var(--transition), background var(--transition);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .btn-wishlist:hover { color: var(--color-wishlist-active); }
+      .btn-wishlist .fa-solid.fa-heart,
+      .btn-wishlist .red-heart {
+        color: var(--color-wishlist-active);
+      }
+      .product-card__cta {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .product-card__cta a,
+      .product-card__cta button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        transition: background var(--transition), color var(--transition), transform var(--transition);
+        font-size: 1.1rem;
+        color: var(--color-text-muted);
+      }
+      .product-card__cta a:hover {
+        background: var(--color-social-whatsapp);
+        color: #fff;
+        transform: scale(1.1);
+      }
+      .product-card__cta .btn-add-cart:hover {
+        background: var(--color-nav);
+        color: #fff;
+        transform: scale(1.1);
+      }
+      .product-card__cta .btn-add-cart svg {
+        width: 20px;
+        height: 20px;
+        stroke: currentColor;
+        fill: none;
+      }
+
+      /* ============================================================
+         EMPTY STATE — identical to store.html
+      ============================================================ */
+      .store-empty {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 4rem 1rem;
+        color: var(--color-text-muted);
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: 1.1rem;
+      }
+
+      /* ============================================================
+         FOOTER — identical to store.html
+      ============================================================ */
+      .site-footer {
+        background: var(--color-bg);
+        border-top: 1px solid var(--color-border);
+        padding: 1.5rem 1rem;
+        margin-top: 1rem;
+      }
+      .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--color-border);
+        color: var(--color-text-primary);
+        transition: background var(--transition), color var(--transition), transform var(--transition);
+      }
+      .footer-social a:hover { transform: translateY(-3px); }
+      .footer-social a svg,
+      .footer-social a i { width: 20px; height: 20px; font-size: 1.1rem; }
+      .footer-social a.twitter:hover   { background: #1da1f2; color: #fff; }
+      .footer-social a.facebook:hover  { background: #1877f2; color: #fff; }
+      .footer-social a.instagram:hover { background: #e1306c; color: #fff; }
+      .footer-social a.whatsapp:hover  { background: #25d366; color: #fff; }
+    </style>
   </head>
+
   <body>
-    <nav class="bg-gray-800">
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button-->
 
-            <button
-              id="buttonMenu"
-              type="button"
-              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <!--Icon when menu is closed.Menu open: "hidden", Menu closed: "block"-->
-              <svg
-                id="openMenu"
-                class="block size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-              <!--
-              Icon when menu is open.
+    <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="navbar__inner">
 
-              Menu open: "block", Menu closed: "hidden"
-              -->
-              <svg
-                id="closeMenu"
-                class="hidden size-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
+        <a href="index.html" class="navbar__brand" aria-label="Davidan Fabric — home">
+          DAVIDANFABRIC
+        </a>
 
-          <div
-            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-          >
-            <div class="flex shrink-0 items-center">
-              <nav class="text-white">DAVIDANFABRIC</nav>
-            </div>
-
-            <div
-              class="hidden sm:absolute sm:inset-x-0 sm:flex sm:justify-center"
-            >
-              <div class="flex space-x-4 justify-center">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a
-                  href="index.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
-                  aria-current="page"
-                  >Home</a
-                >
-                <a
-                  href="store.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
-                  >Store</a
-                >
-                <a
-                  href="cloth.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
-                  >Clothes</a
-                >
-                <a
-                  href="bag.html"
-                  class="rounded-md px-3 py-2 text-sm font-medium text-white"
-                  >Bags</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-          >
-            <!-- carticon svg -->
-
-            <button class="relative p-2 rounded-full hover:bg-gray-200">
-              <svg
-                id="cart"
-                class="w-[34px] h-[34px] text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-              <!-- Place this inside the navbar cart icon container -->
-              <span
-                id="cart-count"
-                class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2 py-0.5 hidden"
-                >0</span
-              >
-            </button>
-
-            <!-- Mobile menu, show/hide based on menu state. -->
-          </div>
+        <div class="navbar__links" role="list">
+          <a href="index.html" role="listitem">Home</a>
+          <a href="store.html" role="listitem">Store</a>
+          <a href="cloth.html" role="listitem" aria-current="page">Clothes</a>
+          <a href="bag.html" role="listitem">Bags</a>
         </div>
-        <div class="sm:hidden hidden bg-gray-800" id="mobile-menu">
-          <div class="space-y-1 px-2 pb-3 pt-2">
-            <a
-              href="index.html"
-              class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
-              aria-current="page"
-              >Home</a
+
+        <div class="navbar__actions">
+          <button
+            class="cart-btn"
+            id="cart"
+            aria-label="View cart"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
             >
-            <a
-              href="store.html"
-              class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
-              >Store</a
-            >
-            <a
-              href="cloth.html"
-              class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
-              >Clothes</a
-            >
-            <a
-              href="bag.html"
-              class="block rounded-md hover:bg-gray-500 px-3 py-2 text-base font-medium text-white"
-              >Bags</a
-            >
-          </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+              />
+            </svg>
+            <span
+              id="cart-count"
+              aria-live="polite"
+              aria-label="Items in cart"
+            >0</span>
+          </button>
+
+          <button
+            id="buttonMenu"
+            class="menu-toggle"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <svg id="openMenu" class="icon-open" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+            </svg>
+            <svg id="closeMenu" class="icon-close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" role="menu">
+        <a href="index.html" role="menuitem">Home</a>
+        <a href="store.html" role="menuitem">Store</a>
+        <a href="cloth.html" role="menuitem" aria-current="page">Clothes</a>
+        <a href="bag.html" role="menuitem">Bags</a>
       </div>
     </nav>
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+    </header>
 
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+    <main id="main-content">
 
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
+      <section aria-label="Clothes collection hero">
+        <div class="store-hero">
+          <img
+            src="image/landingpage.webp"
+            alt="Premium African print clothing and Ankara outfits by Enny Brands"
+            width="1280"
+            height="340"
+            fetchpriority="high"
+          />
+          <div class="store-hero__overlay">
+            <h1 class="store-hero__title">Clothes Collection</h1>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
+      <section aria-label="Clothes product grid" class="store-wrapper">
+        <div class="store-header">
+          <h2 class="store-header__title">Clothes</h2>
+          <span class="store-header__count" id="cloth-product-count" aria-live="polite"></span>
         </div>
-      </div>
 
-      <div class="">
         <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
+          id="cloth-product-container"
+          role="list"
+          aria-label="Clothes product listing"
         >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
+          <p class="store-empty" aria-live="polite">Loading clothes…</p>
         </div>
-      </div>
+      </section>
 
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+    </main>
 
-      <div class="">
-        <div
-          class="card shadow relative flex flex-col items-center mt-1 rounded md:w-64 md:h-auto"
-        >
-          <div
-            class="image_container overflow-hidden relative z-5 w-full rounded h-43"
-          >
-            <img src="image/25.jpg" alt="" class="top-1/2 left-1/2" />
-          </div>
-          <div class="flex justify-between items-center w-full ml-3">
-            <button class="text-xl">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-            <button class="flex justify-center items-center gap-4 ml-auto p-1">
-              <a href="">
-                <i
-                  class="fa-brands fa-whatsapp text-xl text-green-500 hover:opacity-80"
-                ></i>
-              </a>
-              <svg
-                id="cart"
-                class="w-[30px] h-[28px]"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="0.6"
-                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- FOOTER — identical to store.html -->
+    <footer class="site-footer">
+      <nav class="footer-social" aria-label="Social media links">
+        <a href="#" class="twitter" aria-label="Follow us on Twitter">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.29 20c7.547 0 11.675-6.155 11.675-11.49 0-.175 0-.349-.012-.522A8.18 8.18 0 0022 5.92a8.19 8.19 0 01-2.357.636A4.077 4.077 0 0021.448 4.1a8.14 8.14 0 01-2.605.975 4.1 4.1 0 00-6.993 3.734A11.65 11.65 0 013 4.89a4.05 4.05 0 001.27 5.456A4.07 4.07 0 012.8 9.71v.05a4.1 4.1 0 003.292 4.017 4.09 4.09 0 01-1.852.07 4.1 4.1 0 003.834 2.823A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+          </svg>
+        </a>
+        <a href="#" class="facebook" aria-label="Follow us on Facebook">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 12.07C22 6.477 17.523 2 12 2S2 6.477 2 12.07c0 5.012 3.657 9.165 8.438 9.878v-6.99H7.898v-2.888h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.774-1.63 1.562v1.875h2.773l-.443 2.889h-2.33v6.99C18.343 21.235 22 17.081 22 12.07z"/>
+          </svg>
+        </a>
+        <a href="#" class="instagram" aria-label="Follow us on Instagram">
+          <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2A5.75 5.75 0 002 7.75v8.5A5.75 5.75 0 007.75 22h8.5A5.75 5.75 0 0022 16.25v-8.5A5.75 5.75 0 0016.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0120.5 7.75v8.5a4.25 4.25 0 01-4.25 4.25h-8.5a4.25 4.25 0 01-4.25-4.25v-8.5A4.25 4.25 0 017.75 3.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.5a3.5 3.5 0 110 7 3.5 3.5 0 010-7zm5.25-.75a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
+          </svg>
+        </a>
+        <a href="#" class="whatsapp" aria-label="Contact us on WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </nav>
+    </footer>
 
     <script src="script.js"></script>
-    <script src="bag.js"></script>
+    <script src="cloth.js?v=img-jpg"></script>
+
   </body>
 </html>

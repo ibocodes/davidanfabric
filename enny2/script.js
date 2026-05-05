@@ -105,7 +105,7 @@ function escAttr(str) {
 ───────────────────────────────────────────── */
 
 (function initMobileNav() {
-  const btn        = document.getElementById("buttonMenu");
+  const btn = document.getElementById("buttonMenu");
   const mobileMenu = document.getElementById("mobile-menu");
   if (!btn || !mobileMenu) return;
 
